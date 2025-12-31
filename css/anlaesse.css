@@ -1,0 +1,288 @@
+
+/* =========================================================
+   FTV Ennetbaden – Anlässe
+   Vollständiges Stylesheet
+   ========================================================= */
+
+/* ===== Reset & Basis ===== */
+* { box-sizing: border-box }
+html { scroll-behavior: smooth }
+body {
+  margin: 0;
+  color: #1a1a1a;
+  background: #fffdf6; /* sanftes, warmes Weiß */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+               Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  line-height: 1.6;
+}
+
+/* ===== Farb- & Layout-Variablen ===== */
+:root{
+  --bg: #fffdf6;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #e6e2d9;
+  --accent-1: #fff7d6;    /* sehr helles Gelb */
+  --accent-2: #ffe28a;    /* helles Gelb */
+  --accent-3: #ffd666;    /* satteres Gelb */
+  --accent-dark: #8a6f00; /* dunkler Akzent */
+  --shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Dark Mode (optional) */
+@media (prefers-color-scheme: dark) {
+  :root{
+    --bg: #121212;
+    --surface: #1e1e1e;
+    --text: #f3f3f3;
+    --muted: #cfcfcf;
+    --border: #2a2a2a;
+    --accent-1: #2a250f;
+    --accent-2: #6b5a1a;
+    --accent-3: #b08c2a;
+    --shadow: 0 8px 20px rgba(0,0,0,0.4);
+  }
+}
+
+/* ===== Hilfsklassen ===== */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.2rem }
+.muted { color: var(--muted) }
+
+/* Skip-Link für Tastaturnutzer */
+.skip-link {
+  position: absolute; left: -9999px; top: -9999px;
+}
+.skip-link:focus {
+  left: 1rem; top: 1rem;
+  background: var(--accent-2);
+  color: #000;
+  padding: .6rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Links allgemein */
+a { color: inherit }
+a:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+/* ===== Header ===== */
+.site-header {
+  background: linear-gradient(135deg, var(--accent-1), var(--bg));
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+}
+.header-inner img { border-radius: 10px }
+.header-text h1 { margin: 0; font-size: clamp(1.6rem, 2.5vw, 2.2rem) }
+.subtitle { margin: .2rem 0 0; color: var(--muted) }
+
+/* ===== Navigation (Gradient & sticky) ===== */
+.site-nav {
+  position: sticky; top: 0; z-index: 1000;
+  background: linear-gradient(90deg, var(--accent-1) 0%, var(--accent-2) 55%, var(--accent-3) 100%);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: saturate(1.1);
+  -webkit-backdrop-filter: saturate(1.1); /* Safari */
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: clamp(1rem, 4vw, 2.2rem);
+  padding: .8rem 0;
+  margin: 0;
+}
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: .4rem .3rem;
+  border-radius: 8px;
+  transition: color .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #000;
+  background: rgba(255, 240, 180, .55);
+  outline: none;
+  box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+.nav-links a[aria-current="page"] {
+  color: var(--accent-dark);
+  border-bottom: 2px solid var(--accent-dark);
+}
+
+/* ===== Seitenlayout (Main + Sidebar) ===== */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr }
+}
+@media (max-width: 600px) {
+  .nav-links { gap: 1rem } /* engere Abstände auf sehr schmalen Geräten */
+}
+
+/* ===== Hauptspalte ===== */
+main h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+}
+
+/* ===== Events-Tabelle ===== */
+.events-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden; /* zeigt den Radius an den Kanten */
+  box-shadow: var(--shadow);
+}
+.events-table thead th {
+  text-align: left;
+  background: #fff0c2; /* dezenter Tabellenkopf */
+  color: #000;
+  padding: .7rem .8rem;
+  font-weight: 700;
+}
+.events-table tbody th[scope="row"] { font-weight: 700 }
+.events-table td,
+.events-table th {
+  border-bottom: 1px solid var(--border);
+  padding: .65rem .8rem;
+}
+.events-table tbody tr:nth-child(odd) { background: #fffdf6 }
+.events-table tbody tr:hover { background: #fff8da }
+
+/* ===== Hinweise unter der Tabelle ===== */
+.notes { margin: 1rem 0 2rem }
+.notes p { margin: .25rem 0 }
+.notes strong { color: var(--accent-dark) }
+
+/* ===== Carousel (ohne Buttons; Autoplay via JS) ===== */
+.carousel h3 { margin: 0 0 .6rem }
+
+.carousel-view {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  touch-action: pan-y; /* horizontale Gesten, vertikales Scrollen bleibt möglich */
+}
+.carousel-view:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 4px;
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  transition: transform .6s ease;
+  will-change: transform;
+}
+
+.slide {
+  min-width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: start;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Vereinheitlicht die Höhe und verhindert „Springen“ zwischen Bildern: */
+  aspect-ratio: 16 / 9;      /* ggf. auf 4/3 ändern, wenn deine Bilder so sind */
+  object-fit: cover;
+}
+
+.slide figcaption {
+  background: #fff;
+  margin: 0.5rem;
+  padding: .5rem .75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--muted);
+  box-shadow: var(--shadow);
+}
+
+/* Nutzer wünscht reduzierte Bewegung → keine Transition */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track { transition: none }
+}
+
+/* ===== Seitenleiste ===== */
+.sidebar {
+  display: grid;
+  gap: 1rem;
+}
+.side-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.side-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.side-content { padding: .8rem .9rem }
+.side-content h3 { margin: 0 0 .35rem; font-size: 1.1rem }
+.side-content .muted { color: var(--muted); margin: .35rem 0 0 }
+.side-content a { color: var(--text); text-decoration: none }
+.side-content a:hover,
+.side-content a:focus { text-decoration: underline }
+
+/* ===== Footer ===== */
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.footer-links a { color: var(--text); text-decoration: none }
+.footer-links a:hover,
+.footer-links a:focus { text-decoration: underline }
+
+/* ===== Medien & Druck ===== */
+img { max-width: 100%; height: auto; vertical-align: middle }
+
+/* Schlanke Druckansicht (optional) */
+@media print {
+  .site-nav, .sidebar, .carousel, .footer-inner ul { display: none !important }
+  body { background: #fff }
+  .container { max-width: 100%; padding: 0 }
+  .site-header, .site-footer { border: 0; box-shadow: none }
+}

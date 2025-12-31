@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ehrungen des Frauenturnvereins Ennetbaden: Auszeichnungen für langjährige aktive und passive Mitglieder sowie In Memoriam." />
+  <title>FTV Ennetbaden – Ehrungen</title>
+  <!-- Favicon & CSS -->
+  <link rel="icon" href="./assets/Logo.png" type="image/png" />
+  <link rel="stylesheet" href="./css/ehrungen.css" />
+</head>
+
+<body>
+  <!-- Skip-Link -->
+  <a class="skip-link" href="#hauptinhalt">Zum Inhalt springen</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="./assets/Logo.png" alt="Logo des Frauenturnvereins Ennetbaden" width="80" height="84" decoding="async" />
+      <div class="header-text">
+        <h1>Frauenturnverein Ennetbaden</h1>
+        <p class="subtitle">Ehrungen &amp; In Memoriam</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation (Gradient, sticky) -->
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./kontakt.html">Kontakt</a></li>
+        <li><a href="./anleasse.html">Anlässe</a></li>
+        <li><a aria-current="page" href="./ehrungen.html">Ehrungen</a></li>
+        <li><a href="./fotogalerie.html">Fotogalerie</a></li>
+        <li><a href="./location.html">Turnhalle</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Seitenlayout -->
+  <div class="container layout" id="hauptinhalt">
+    <!-- Hauptbereich -->
+    <main>
+      <section class="page-intro">
+        <h2>Ehrungen <span class="year">2025</span></h2>
+        <p class="muted">Wir ehren unsere langjährigen Mitglieder für ihre Treue und ihr Engagement im Verein.</p>
+      </section>
+
+      <!-- Hero-Abbildung (optional) -->
+      <figure class="hero-figure">
+        <img src="./assets/blumenstrauss.jpg" alt="Festlicher Blumenstrauß zur Ehrung" loading="lazy" decoding="async" />
+        <figcaption class="muted">Gemeinsam feiern – Danke für die vielen Jahre im FTV Ennetbaden.</figcaption>
+      </figure>
+
+      <!-- Kartenraster für Ehrungen -->
+      <section class="honors-grid" aria-label="Ehrungen langjähriger Mitglieder">
+        <!-- Aktive Mitglieder -->
+        <article class="honor-card">
+          <header class="card-header">
+            <h3>Aktive Mitglieder</h3>
+            <span class="badge">Ehrungen</span>
+          </header>
+          <ul class="honor-list">
+            <li>
+              <div class="honor-line">
+                <span class="years">35 Jahre</span>
+                <span class="name">Doris</span>
+              </div>
+            </li>
+            <!-- Weitere aktive Ehrungen -->
+            <!--
+            <li>
+              <div class="honor-line">
+                <span class="years">25 Jahre</span>
+                <span class="name">Beispielname</span>
+              </div>
+            </li>
+            -->
+          </ul>
+        </article>
+
+        <!-- Passive Mitglieder -->
+        <article class="honor-card">
+          <header class="card-header">
+            <h3>Passive Mitglieder</h3>
+            <span class="badge">Ehrungen</span>
+          </header>
+          <ul class="honor-list">
+            <li>
+              <div class="honor-line">
+                <span class="years">45 Jahre</span>
+                <span class="name">Margrit</span>
+              </div>
+            </li>
+            <li>
+              <div class="honor-line">
+                <span class="years">65 Jahre</span>
+                <span class="name">Hanni</span>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Hinweis-Box (optional) -->
+      <section class="note-card" aria-label="Hinweise zu Ehrungen">
+        <p><strong>Hinweis:</strong> Ehrungen finden jeweils im Rahmen der Vereinsanlässe statt. Vorschläge dürfen gerne jederzeit bei der Leitung eingereicht werden.</p>
+      </section>
+    </main>
+
+    <!-- Seitenleiste: In Memoriam -->
+    <aside class="sidebar" aria-label="In Memoriam – Wir gedenken unseren verstorbenen Mitgliedern">
+      <section class="memoriam-card">
+        <h3>In Memoriam</h3>
+        <ul class="memoriam-list">
+          <li>
+            <span class="mem-name">Annemarie Basler</span>
+            <span class="mem-year">(2024)</span>
+          </li>
+          <li>
+            <span class="mem-name">Elfriede Aust</span>
+            <span class="mem-year">(2020)</span>
+          </li>
+          <li>
+            <span class="mem-name">Marlis Markwalder</span>
+            <span class="mem-year">(2015)</span>
+          </li>
+          <li>
+            <span class="mem-name">Elsy Fehlmann</span>
+            <span class="mem-year">(2012)</span>
+          </li>
+          <li>
+            <span class="mem-name">Marie Richner</span>
+            <span class="mem-year">(2011)</span>
+          </li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="jahr"></span> FTV Ennetbaden · Aargau</p>
+      <ul class="footer-links">
+        <li><a href="./impressum.html">Impressum</a></li>
+        <li><a href="./kontakt.html">Kontakt</a></li>  
+      </ul>
+    </div>
+    <script>
+      document.getElementById('jahr').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Fotogalerie des Frauenturnvereins Ennetbaden: Turnerwanderungen und Vereinsimpressionen nach Jahren geordnet." />
+  <title>FTV Ennetbaden – Fotogalerie</title>
+
+  <!-- Favicons (optional) -->
+  <link rel="icon" href="./assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/favicon-16.png" sizes="16x16" type="image/png" />
+
+  <!-- Preload Logo (ruhiger First Paint) -->
+  <link rel="preload" as="image" href="./assets/Logo.png" fetchpriority="high" />
+
+  <!-- Seite-CSS -->
+  <link rel="stylesheet" href="./css/fotogalerie.css" />
+</head>
+
+<body>
+  <!-- Skip-Link -->
+  <a class="skip-link" href="#hauptinhalt">Zum Inhalt springen</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <img
+        src="./assets/Logo.png"
+        alt="Logo des Frauenturnvereins Ennetbaden"
+        width="80" height="84"
+        loading="eager" fetchpriority="high" />
+      <div class="header-text">
+        <h1>Frauenturnverein Ennetbaden</h1>
+        <p class="subtitle">Fotogalerie</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./kontakt.html">Kontakt</a></li>
+        <li><a href="./anlaesse.html">Anlässe</a></li>
+        <li><a href="./ehrungen.html">Ehrungen</a></li>
+        <li><a href="./fotogalerie.html" aria-current="page">Fotogalerie</a></li>
+        <li><a href="./location.html">Turnhalle</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Layout -->
+  <div class="container layout" id="hauptinhalt">
+    <!-- Hauptspalte -->
+    <main>
+      <section class="page-intro">
+        <h2>Fotogalerie</h2>
+        <p class="muted">Highlights unserer Wanderungen und Vereinsmomente – nach Jahren gefiltert.</p>
+      </section>
+
+      <!-- Filter (Jahre) -->
+      <section class="filters" aria-label="Filter nach Jahr">
+        <button class="chip is-active" data-year="all" type="button">Alle</button>
+        <button class="chip" data-year="2025" type="button">2025</button>
+        <button class="chip" data-year="2024" type="button">2024</button>
+        <button class="chip" data-year="2023" type="button">2023</button>
+      </section>
+
+      <!-- Kartenraster -->
+      <section class="gallery-grid" aria-label="Galerieübersicht">
+        <!-- 2025 -->
+        <article class="gallery-card" data-year="2025">
+          <figure class="card-figure">
+            <img
+              src="./assets/gal/2025/teaser.jpg"
+              alt="Turnerwanderung 2025 – Aufstieg Richtung Homberg"
+              width="640" height="400"
+              loading="lazy" decoding="async" />
+            <figcaption class="muted">Turnerwanderung 7.09.2025 · Boniswil → Homberg ob Beinwil</figcaption>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Turnerwanderung 7.09.2025</h3>
+            <p class="card-text">Von Boniswil auf den Homberg ob Beinwil.</p>
+            <button class="btn btn-primary" data-lightbox="gal-2025">Bilder ansehen</button>
+          </div>
+        </article>
+
+        <!-- 2024 -->
+        <article class="gallery-card" data-year="2024">
+          <figure class="card-figure">
+            <img
+              src="./assets/gal/2024/teaser.jpg"
+              alt="Turnerwanderung 2024 – Sandsteinhöhlen von Staffelbach"
+              width="640" height="400"
+              loading="lazy" decoding="async" />
+            <figcaption class="muted">Turnerwanderung 8.09.2024 · Sandsteinhöhlen von Staffelbach</figcaption>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Turnerwanderung 8.09.2024</h3>
+            <p class="card-text">Auf Umwegen zu den Sandsteinhöhlen von Staffelbach.</p>
+            <button class="btn btn-primary" data-lightbox="gal-2024">Bilder ansehen</button>
+          </div>
+        </article>
+
+        <!-- 2023 -->
+        <article class="gallery-card" data-year="2023">
+          <figure class="card-figure">
+            <img
+              src="./assets/gal/2023/teaser.jpg"
+              alt="Turnerwanderung 2023 – Von Scheuren nach Pieterlen"
+              width="640" height="400"
+              loading="lazy" decoding="async" />
+            <figcaption class="muted">Turnerwanderung 3.09.2023 · Scheuren → Pieterlen</figcaption>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Turnerwanderung 3.09.2023</h3>
+            <p class="card-text">Mit Besuch bei unserer ehemaligen Turnerin Dietlind Mus.</p>
+            <button class="btn btn-primary" data-lightbox="gal-2023">Bilder ansehen</button>
+          </div>
+        </article>
+      </section>
+
+      <p id="noResults" class="muted no-results" hidden>Keine Einträge für diese Auswahl.</p>
+    </main>
+
+    <!-- Seitenleiste -->
+    <aside class="sidebar" aria-label="Informationen">
+      <section class="info-card">
+        <h3>Info</h3>
+        <p>Partner und Freunde sind herzlich eingeladen mitzuwandern!</p>
+        <figure class="profile">
+          <img src="./assets/praesidium.jpg" alt="Präsidium – Portrait" width="280" height="320" loading="lazy" decoding="async" />
+          <figcaption class="muted">Doris Thierer<br><span class="small">Präsidentin</span></figcaption>
+        </figure>
+      </section>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="jahr"></span> FTV Ennetbaden · Aargau</p>
+      <ul class="footer-links">
+        <li><a href="./impressum.html">Impressum</a></li>
+        <li><a href="./kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <script>document.getElementById('jahr').textContent = new Date().getFullYear();</script>
+  </footer>
+
+  <!-- Minimal-JS: Filter + Lightbox -->
+  <script>
+  (function () {
+    // ===== Filter nach Jahr =====
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    const cards = Array.from(document.querySelectorAll('.gallery-card'));
+    const noRes = document.getElementById('noResults');
+
+    function applyFilter(year) {
+      let visible = 0;
+      cards.forEach(card => {
+        const show = (year === 'all') || (card.dataset.year === year);
+        card.hidden = !show;              // wir verwenden hidden + CSS [hidden]{display:none!important}
+        if (show) visible++;
+      });
+      noRes.hidden = (visible !== 0);
+    }
+
+    chips.forEach(ch => ch.addEventListener('click', () => {
+      chips.forEach(c => c.classList.toggle('is-active', c === ch));
+      applyFilter(ch.dataset.year);
+    }));
+
+    // Initial „Alle“
+    applyFilter('all');
+
+    // ===== Einfache Lightbox mit <dialog> =====
+    const galleries = {
+      'gal-2025': [
+        './assets/gal/2025/01.jpg',
+        './assets/gal/2025/02.jpg',
+        './assets/gal/2025/03.jpg'
+      ],
+      'gal-2024': [
+        './assets/gal/2024/01.jpg',
+        './assets/gal/2024/02.jpg',
+        './assets/gal/2024/03.jpg'
+      ],
+      'gal-2023': [
+        './assets/gal/2023/01.jpg',
+        './assets/gal/2023/02.jpg',
+        './assets/gal/2023/03.jpg'
+      ]
+    };
+
+    function createLightbox(id) {
+      const list = galleries[id] || [];
+      if (!list.length) return;
+
+      const dlg = document.createElement('dialog');
+      dlg.className = 'lightbox';
+      dlg.innerHTML = `
+        <div class="lightbox-inner">
+          <button class="lb-btn lb-prev" aria-label="Vorheriges Bild">‹</button>
+          <img class="lb-img" alt="" />
+          <button class="lb-btn lb-next" aria-label="Nächstes Bild">›</button>
+          <button class="lb-close" aria-label="Schließen">×</button>
+        </div>
+      `;
+      document.body.appendChild(dlg);
+
+      const img = dlg.querySelector('.lb-img');
+      const prev = dlg.querySelector('.lb-prev');
+      const next = dlg.querySelector('.lb-next');
+      const close = dlg.querySelector('.lb-close');
+
+      let idx = 0;
+      function show(i) {
+        idx = (i + list.length) % list.length;
+        img.src = list[idx];
+        img.loading = 'eager';
+        img.decoding = 'async';
+      }
+
+      prev.addEventListener('click', () => show(idx - 1));
+      next.addEventListener('click', () => show(idx + 1));
+      close.addEventListener('click', () => dlg.close());
+      dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+      dlg.addEventListener('close', () => dlg.remove());
+      dlg.addEventListener('cancel', (e) => { e.preventDefault(); dlg.close(); }); // ESC
+
+      if ('showModal' in dlg) {
+        dlg.showModal();
+        show(0);
+      } else {
+        // Fallback: erstes Bild im neuen Tab
+        window.open(list[0], '_blank');
+      }
+    }
+
+    document.querySelectorAll('[data-lightbox]').forEach(btn => {
+      btn.addEventListener('click', () => createLightbox(btn.getAttribute('data-lightbox')));
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Anfahrt zur Turnhalle des Frauenturnvereins Ennetbaden – Karte mit Marker und Wegbeschreibung." />
+  <title>FTV Ennetbaden – Turnhalle & Karte</title>
+
+  <!-- Favicons (optional) -->
+  <link rel="icon" href="./assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/favicon-16.png" sizes="16x16" type="image/png" />
+
+  <!-- Preload Logo für ruhigen First Paint -->
+  <link rel="preload" as="image" href="./assets/Logo.png" />
+
+  <!-- Leaflet CSS/JS (CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Seiten-CSS -->
+  <link rel="stylesheet" href="./css/location.css" />
+</head>
+
+<body>
+  <!-- Skip-Link -->
+  <a class="skip-link" href="#hauptinhalt">Zum Inhalt springen</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <img
+        src="./assets/Logo.png"
+        alt="Logo des Frauenturnvereins Ennetbaden"
+        width="80" height="84"
+        loading="eager" fetchpriority="high" />
+      <div class="header-text">
+        <h1>Frauenturnverein Ennetbaden</h1>
+        <p class="subtitle">Turnhalle – Lage &amp; Anfahrt</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./kontakt.html">Kontakt</a></li>
+        <li><a href="./anleasse.html">Anlässe</a></li>
+        <li><a href="./ehrungen.html">Ehrungen</a></li>
+        <li><a href="./fotogalerie.html">Fotogalerie</a></li>
+        <li><a aria-current="page" href="./location.html">Turnhalle</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Inhalt -->
+  <div class="container layout" id="hauptinhalt">
+    <main>
+      <section class="page-intro">
+        <h2>Turnhalle Ennetbaden</h2>
+        <p class="muted">Hier finden Sie die genaue Lage unserer Turnhalle sowie eine Wegbeschreibung.</p>
+      </section>
+
+      <!-- Info & Adresse -->
+      <section class="info-card">
+        <h3>Adresse</h3>
+        <address class="address">
+          Grendelstrasse&nbsp;9<br />
+          5408&nbsp;Ennetbaden<br />
+          Schweiz
+        </address>
+
+        <div class="route-actions">
+          <!-- Links werden per JS auf die korrekten Koordinaten gesetzt -->
+          <a id="link-gmaps" class="btn btn-primary" target="_blank" rel="noopener" href="#">Route in Google Maps</a>
+        </div>
+      </section>
+
+      <!-- Karte -->
+      <section class="map-card" aria-label="Karte der Turnhalle">
+        <div id="map" role="application" aria-label="Interaktive Karte mit Marker"></div>
+        <p class="map-attrib muted">
+          Karte: © <a target="_blank" rel="noopener" href="https://www.openstreetmap.org">OpenStreetMap</a>‑Mitwirkende ·
+          Tiles: <a target="_blank" rel="noopener" href="https://www.openstreetmap.org/copyright">OSM</a>
+        </p>
+      </section>
+    </main>
+
+    <!-- Seitenleiste (optional Hinweise) -->
+    <aside class="sidebar" aria-label="Zusätzliche Hinweise">
+      <section class="side-card">
+        <h3>Anfahrt</h3>
+        <ul class="bullet">
+          <li>Parkplätze in der Nähe der Turnhalle.</li>
+          <li>ÖV: Bahnhof Baden → Bus nach Ennetbaden, kurzer Fussweg.</li>
+          <li>Bitte frühzeitig eintreffen, Umkleiden sind vor Ort.</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="jahr"></span> FTV Ennetbaden · Aargau</p>
+      <ul class="footer-links">
+        <li><a href="./impressum.html">Impressum</a></li>
+        <li><a href="./kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <script>document.getElementById('jahr').textContent = new Date().getFullYear();</script>
+  </footer>
+
+  <!-- Karte initialisieren -->
+  <script>
+    (function () {
+      // === Koordinaten der Turnhalle ===
+      // TODO: ERSETZEN mit den exakten Werten deiner Turnhalle!
+      // Tipp: In OpenStreetMap/Google Maps Koordinaten kopieren und hier einsetzen.
+      const TURNHALLE = { lat: 47.47888280633815, lng: 8.314921370685475 }; // Platzhalter (ungefähr Ennetbaden)
+ 
+      // Karte aufsetzen
+      const map = L.map('map', {
+        center: [TURNHALLE.lat, TURNHALLE.lng],
+        zoom: 16,
+        minZoom: 3,
+        maxZoom: 19,
+        scrollWheelZoom: true
+      });
+
+      // Tiles laden
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution:
+          '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>‑Mitwirkende',
+      }).addTo(map);
+
+      // Marker-Icon (eigene PNG) – falls nicht vorhanden, nutzt Leaflet das Standard-Icon
+      const icon = L.icon({
+        iconUrl: './assets/marker-turnhalle.svg',  // Optional: eigenes Icon hier ablegen
+        iconSize: [38, 50],
+        iconAnchor: [19, 50],
+        popupAnchor: [0, -48]
+      });
+
+      // Marker setzen
+      const marker = L.marker([TURNHALLE.lat, TURNHALLE.lng], { icon }).addTo(map);
+      marker.bindPopup('<strong>Turnhalle Ennetbaden</strong><br>Schlierenstrasse&nbsp;86<br>5408&nbsp;Ennetbaden');
+
+      // Routen-Links erzeugen
+      const gmaps = `https://www.google.com/maps/search/?api=1&query=${TURNHALLE.lat},${TURNHALLE.lng}`;
+      document.getElementById('link-gmaps').href = gmaps;
+
+      // Barrierefreiheit: Fokus-Stil für Karte
+      const mapEl = document.getElementById('map');
+      mapEl.tabIndex = 0;
+      mapEl.addEventListener('focus', () => mapEl.classList.add('focus'));
+      mapEl.addEventListener('blur',  () => mapEl.classList.remove('focus'));
+    })();
+  </script>
+</body>
+</html>

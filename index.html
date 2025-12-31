@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Der FTV Ennetbaden ist ein Turnverein für Frauen ab 40: Gymnastik, Dehnung, Pilates, Beckenbodenübungen, Spiele und Tanz. Wir turnen jeden Dienstagabend in der Turnhalle Ennetbaden/AG.">
+  <meta name="keywords" content="Turnverein, Frauen, Ennetbaden, Gymnastik, Beckenbodenübungen, Pilates, körperliche Aktivität">
+  <title>FTV Ennetbaden – Startseite</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="icon" type="image/png" href="./assets/Logo.png">
+</head>
+
+<body>
+  <!-- Skip-Link für Tastatur-Nutzer -->
+  <a class="skip-link" href="#hauptinhalt">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="./assets/Logo.png" alt="Logo des Frauenturnvereins Ennetbaden" width="80" height="84" decoding="async" />
+      <div class="header-text">
+        <h1>Frauenturnverein Ennetbaden</h1>
+        <p class="subtitle">Gymnastik, Pilates, Spiele &amp; Tanz - jeden Dienstagabend</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a aria-current="page" href="./index.html" >Home</a></li>
+        <li><a href="./kontakt.html">Kontakt</a></li>
+        <li><a href="./anleasse.html">Anlässe</a></li>
+        <li><a href="./ehrungen.html">Ehrungen</a></li>
+        <li><a href="./fotogalerie.html">Fotogalerie</a></li>
+        <li><a href="./location.html">Turnhalle</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero/Intro -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h2>Bewegung mit Freude – für Frauen 40+</h2>
+        <p>Wir sind durchschnittlich 10 turnende Frauen. Unsere Turnleiterin Yvonne
+           hält uns mit einem abwechslungsreichen Programm fit und beweglich.</p>
+        <a class="btn-primary" href="./kontakt.html">Jetzt vorbeikommen</a>
+      </div>
+      <figure class="hero-figure">
+        <img src="./assets/Gymnastik-Gruppenfoto Dez. 2018.JPG"
+             width="526" height="352"
+             loading="lazy" decoding="async"
+             alt="Gruppenfoto bei einer Gymnastikübung">
+        <figcaption>Gemeinsam aktiv – Ennetbaden</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <main id="hauptinhalt" class="container">
+    <section class="cards">
+      <!-- Karte 1 -->
+      <article class="card">
+        <div class="card-content">
+          <h3>Wir sind</h3>
+          <ul>
+            <li>durchschnittlich 10 turnende Frauen im Alter 40+</li>
+            <li>Turnleiterin Yvonne mit professionellem, abwechslungsreichem Programm</li>
+          </ul>
+        </div>
+        <figure class="card-figure">
+          <img src="./assets/Turnhalle.JPG"
+               width="294" height="306"
+               loading="lazy" decoding="async"
+               alt="Turnhalle Ennetbaden von innen">
+          <figcaption>Turnhalle Ennetbaden</figcaption>
+        </figure>
+      </article>
+
+      <!-- Karte 2 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img src="./assets/Gymnastik-Gruppenfoto Dez. 2018.JPG"
+               width="526" height="352"
+               loading="lazy" decoding="async"
+               alt="Gemeinsame Gymnastikübung">
+          <figcaption>Gymnastik &amp; Koordination</figcaption>
+        </figure>
+        <div class="card-content">
+          <h3>Wir turnen</h3>
+          <ul>
+            <li>Fitness und Gymnastik</li>
+            <li>Stärkung der Bauch- und Rückenmuskulatur</li>
+            <li>Spiele und Entspannungsübungen</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Karte 3 -->
+      <article class="card">
+        <div class="card-content">
+          <h3>Freude am Turnen</h3>
+          <p>
+            Der Spaß steht bei uns im Vordergrund: Jede turnt so, wie sie kann und mag.
+            Jede kommt auf ihre Kosten – die sportliche sowie die weniger sportliche.
+          </p>
+          <p class="price">Mitgliederbeitrag: <strong>CHF&nbsp;100.–</strong></p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="jahr"></span> FTV Ennetbaden &middot; Aargau</p>
+      <nav aria-label="Footer Navigation">
+        <ul class="footer-links">
+          <li><a href="./impressum.html">Impressum</a></li>
+          <li><a href="./kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <script>
+      // Jahr automatisch setzen
+      document.getElementById('jahr').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>

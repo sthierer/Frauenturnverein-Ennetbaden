@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Kontakt zum Frauenturnverein Ennetbaden. Adresse, E‑Mail und Kontaktformular für Neumitglieder und Interessierte." />
+  <title>FTV Ennetbaden – Kontakt</title>
+  <link rel="icon" href="./assets/Logo.png" />
+  <link rel="stylesheet" href="./css/kontakt.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#hauptinhalt">Zum Inhalt springen</a>
+
+  <!-- Kopfbereich -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="./assets/Logo.png" alt="Logo des Frauenturnvereins Ennetbaden" width="80" decoding="async">
+      <div class="header-text">
+        <h1>Frauenturnverein Ennetbaden</h1>
+        <p class="subtitle">Kontakt &amp; Informationen für Neumitglieder</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation (mit Gradient) -->
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a aria-current="page" href="./kontakt.html">Kontakt</a></li>
+        <li><a href="./anleasse.html">Anlässe</a></li>
+        <li><a href="./ehrungen.html">Ehrungen</a></li>
+        <li><a href="./fotogalerie.html">Fotogalerie</a></li>
+        <li><a href="./location.html">Turnhalle</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Layout -->
+  <div class="container layout" id="hauptinhalt">
+    <!-- Hauptbereich -->
+    <main>
+      <h2>Kontakt</h2>
+
+      <!-- Kontaktkarte (Präsidentin/Adresse) -->
+      <section class="contact-card" aria-labelledby="kontaktstelle">
+        <h3 id="kontaktstelle">Kontaktstelle</h3>
+        <div class="contact-grid">
+          <div class="contact-details">
+            <p class="person-role"><strong>Präsidentin</strong></p>
+            <p class="person-name">Doris Thierer</p>
+            <address class="address">
+              Schlierenstrasse&nbsp;86<br />
+              5408&nbsp;Ennetbaden<br />
+            </address>
+            <p class="email">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="icon"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+              <a href="mailto:ftv.ennetbaden@gmx.ch">ftv.ennetbaden@gmx.ch</a>
+            </p>
+          </div>
+
+          <figure class="contact-figure">
+            <!-- Optional: Vereins-/Turnhallenbild -->
+            <img src="./assets/turnhalle.jpg" alt="Turnhalle Ennetbaden" loading="lazy" decoding="async" />
+            <figcaption class="muted">Turnhalle Ennetbaden</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Kontaktformular -->
+      <section class="form-section" aria-labelledby="kontaktformular">
+        <h3 id="kontaktformular">Kontaktformular</h3>
+
+        <form id="contactForm" class="contact-form" novalidate>
+          <!-- Honeypot (unsichtbar für Nutzer, Bots füllen ihn oft aus) -->
+          <div class="hp" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-field">
+            <label for="name">Name <span aria-hidden="true">*</span></label>
+            <input
+              id="name" name="Name" type="text"
+              autocomplete="name" inputmode="text"
+              placeholder="Vor- und Nachname"
+              minlength="3" maxlength="80"
+              required
+              aria-describedby="nameHelp nameError">
+            <small id="nameHelp" class="muted">Bitte mindestens 3 Zeichen, nur Buchstaben, Leerzeichen, Bindestriche und Apostrophe.</small>
+            <div id="nameError" class="error-msg" aria-live="polite"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="email">E‑Mail <span aria-hidden="true">*</span></label>
+            <input
+              id="email" name="E-Mail" type="email"
+              autocomplete="email" inputmode="email"
+              placeholder="beispiel@domain.ch"
+              required
+              aria-describedby="emailError">
+            <div id="emailError" class="error-msg" aria-live="polite"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Nachricht <span aria-hidden="true">*</span></label>
+            <textarea
+              id="message" name="Nachricht" rows="6"
+              placeholder="Ihre Nachricht an den Turnverein …"
+              minlength="20" maxlength="2000"
+              required
+              aria-describedby="messageHelp messageError"></textarea>
+            <small id="messageHelp" class="muted">Mindestens 20 Zeichen (kurze, klare Beschreibung genügt).</small>
+            <div id="messageError" class="error-msg" aria-live="polite"></div>
+          </div>
+
+          <div class="form-field">
+            <label class="checkbox">
+              <input id="consent" name="Consent" type="checkbox" required aria-describedby="consentError">
+              Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden.
+            </label>
+            <div id="consentError" class="error-msg" aria-live="polite"></div>
+          </div>
+
+          <!-- Zusammenfassung von Fehlern (wird dynamisch befüllt) -->
+          <div id="formErrors" class="form-errors" role="alert" aria-live="assertive"></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Senden</button>
+            <button type="reset" class="btn btn-secondary">Zurücksetzen</button>
+          </div>
+
+          <p class="privacy" id="datenschutz">
+            Mit dem Absenden erklären Sie sich einverstanden, dass wir Ihre Angaben zur Bearbeitung Ihrer Anfrage verwenden. Es erfolgt keine Weitergabe an Dritte.
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <!-- Seitenleiste -->
+    <aside class="sidebar" aria-label="Informationen für Neumitglieder">
+      <article class="side-card">
+        <h3>Neumitglieder</h3>
+        <p>Bei uns können alle mitmachen, die sich sportlich fit halten wollen.</p>
+        <p>Wir sind eine gesellige Gruppe und freuen uns herzlich über neue Mitglieder!</p>
+        <hr />
+        <ul class="bullet">
+          <li>Unverbindliches Schnuppern jederzeit möglich.</li>
+          <li>Mitgliedsbeitrag: CHF&nbsp;100.– pro Jahr.</li>
+          <li>Training: Dienstagabend, Turnhalle Ennetbaden.</li>
+        </ul>
+        <a class="btn-outline" href="./anleasse.html">Nächste Anlässe ansehen</a>
+      </article>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="jahr"></span> FTV Ennetbaden · Aargau</p>
+      <ul class="footer-links">
+        <li><a href="./impressum.html">Impressum</a></li>
+        <li><a href="./kontakt.html" aria-current="page">Kontakt</a></li>
+      </ul>
+    </div>
+    <script>
+      document.getElementById('jahr').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+  <!-- Formular-Validierung -->
+  <script>
+  (function () {
+    const trim = (s) => (s || "").replace(/\s+/g, " ").trim();
+    const setError = (input, errorEl, message) => {
+      if (!input || !errorEl) return;
+      input.setAttribute("aria-invalid", message ? "true" : "false");
+      errorEl.textContent = message || "";
+    };
+
+    function validateName(value) {
+      const v = trim(value);
+      if (!v) return { valid: false, msg: "Bitte geben Sie Ihren Namen ein." };
+      if (v.length < 3) return { valid: false, msg: "Der Name muss mindestens 3 Zeichen enthalten." };
+      const pattern = /^[A-Za-zÀ-ÖØ-öø-ÿÄÖÜäöüß' -]{3,}$/;
+      if (!pattern.test(v)) return { valid: false, msg: "Bitte nur Buchstaben, Leerzeichen, Bindestriche und Apostrophe verwenden." };
+      return { valid: true };
+    }
+
+    function validateEmail(value) {
+      const v = trim(value).toLowerCase();
+      if (!v) return { valid: false, msg: "Bitte geben Sie Ihre E‑Mail‑Adresse ein." };
+      const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      if (!pattern.test(v)) return { valid: false, msg: "Bitte geben Sie eine gültige E‑Mail‑Adresse ein." };
+      const blocked = ["example.com", "test.com", "invalid", "localhost"];
+      const domain = v.split("@")[1] || "";
+      if (blocked.includes(domain)) return { valid: false, msg: "Bitte verwenden Sie eine echte E‑Mail‑Adresse." };
+      return { valid: true };
+    }
+
+    function validateMessage(value) {
+      const v = trim(value);
+      if (!v) return { valid: false, msg: "Bitte schreiben Sie eine Nachricht." };
+      if (v.length < 20) return { valid: false, msg: "Die Nachricht muss mindestens 20 Zeichen enthalten." };
+      const repetitive = /(.)\1{9,}/;
+      if (repetitive.test(v)) return { valid: false, msg: "Bitte formulieren Sie Ihre Nachricht verständlich." };
+      return { valid: true };
+    }
+
+    function validateConsent(checked) {
+      if (!checked) return { valid: false, msg: "Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu." };
+      return { valid: true };
+    }
+
+    function initContactFormValidation() {
+      const form = document.getElementById("contactForm");
+      if (!form) return;
+
+      const nameEl = document.getElementById("name");
+      const emailEl = document.getElementById("email");
+      const msgEl = document.getElementById("message");
+      const consentEl = document.getElementById("consent");
+      const hpEl = document.getElementById("website");
+
+      const nameErr = document.getElementById("nameError");
+      const emailErr = document.getElementById("emailError");
+      const msgErr = document.getElementById("messageError");
+      const consentErr = document.getElementById("consentError");
+      const formErrors = document.getElementById("formErrors");
+
+      // Echtzeit-Validierung
+      nameEl.addEventListener("input", () => {
+        const res = validateName(nameEl.value);
+        setError(nameEl, nameErr, res.valid ? "" : res.msg);
+      });
+      emailEl.addEventListener("input", () => {
+        const res = validateEmail(emailEl.value);
+        setError(emailEl, emailErr, res.valid ? "" : res.msg);
+      });
+      msgEl.addEventListener("input", () => {
+        const res = validateMessage(msgEl.value);
+        setError(msgEl, msgErr, res.valid ? "" : res.msg);
+      });
+      consentEl.addEventListener("change", () => {
+        const res = validateConsent(consentEl.checked);
+        setError(consentEl, consentErr, res.valid ? "" : res.msg);
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Honeypot: wenn ausgefüllt, abbrechen
+        if (hpEl && trim(hpEl.value).length > 0) {
+          return showFormErrors(["Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es später erneut."]);
+        }
+
+        const errors = [];
+        const rName = validateName(nameEl.value);
+        setError(nameEl, nameErr, rName.valid ? "" : rName.msg);
+        if (!rName.valid) errors.push("Name: " + rName.msg);
+
+        const rEmail = validateEmail(emailEl.value);
+        setError(emailEl, emailErr, rEmail.valid ? "" : rEmail.msg);
+        if (!rEmail.valid) errors.push("E‑Mail: " + rEmail.msg);
+
+        const rMsg = validateMessage(msgEl.value);
+        setError(msgEl, msgErr, rMsg.valid ? "" : rMsg.msg);
+        if (!rMsg.valid) errors.push("Nachricht: " + rMsg.msg);
+
+        const rConsent = validateConsent(consentEl.checked);
+        setError(consentEl, consentErr, rConsent.valid ? "" : rConsent.msg);
+        if (!rConsent.valid) errors.push("Zustimmung: " + rConsent.msg);
+
+        if (errors.length > 0) {
+          showFormErrors(errors);
+          const firstInvalid = [nameEl, emailEl, msgEl, consentEl]
+            .find(el => el.getAttribute("aria-invalid") === "true" || (el === consentEl && !consentEl.checked));
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        // Erfolg: Zusammenfassung ausblenden
+        formErrors.classList.remove("show");
+        formErrors.textContent = "";
+
+        // Versand per mailto (öffnet lokales E-Mail-Programm)
+        const subject = `Kontaktanfrage von ${trim(nameEl.value)}`;
+        const bodyLines = [
+          `Name: ${trim(nameEl.value)}`,
+          `E-Mail: ${trim(emailEl.value)}`,
+          "",
+          "Nachricht:",
+          trim(msgEl.value)
+        ];
+        const mailto = `mailto:ftv.ennetbaden@gmx.ch?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+        window.location.href = mailto;
+      });
+
+      function showFormErrors(list) {
+        if (!formErrors) return;
+        formErrors.innerHTML = `<strong>Bitte prüfen:</strong><ul>${list.map(li => `<li>${li}</li>`).join("")}</ul>`;
+        formErrors.classList.add("show");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", initContactFormValidation);
+  })();
+  </script>
+</body>
+</html>
