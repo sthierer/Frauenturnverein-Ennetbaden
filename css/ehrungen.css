@@ -117,6 +117,9 @@ a:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px }
   border-bottom: 2px solid var(--accent-dark);
 }
 
+@media (max-width: 600px) { .nav-links { gap: 1rem } }
+
+
 /* ===== Seitenlayout ===== */
 .layout {
   display: grid;

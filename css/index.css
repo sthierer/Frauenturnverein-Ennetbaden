@@ -113,6 +113,8 @@ a:focus-visible {
   border-bottom: 2px solid var(--accent-dark);
 }
 
+@media (max-width: 600px) { .nav-links { gap: 1rem } }
+
 /* ===== Hero ===== */
 .hero {
   background: linear-gradient(180deg, #fffdf6 0%, #fff7d6 100%);

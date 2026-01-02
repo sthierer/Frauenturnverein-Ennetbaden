@@ -165,6 +165,10 @@ main h2 {
 .events-table tbody tr:nth-child(odd) { background: #fffdf6 }
 .events-table tbody tr:hover { background: #fff8da }
 
+@media (max-width: 600px) {
+  .events-table {width: 550px; } /* engere Abstände auf sehr schmalen Geräten */
+}
+
 /* ===== Hinweise unter der Tabelle ===== */
 .notes { margin: 1rem 0 2rem }
 .notes p { margin: .25rem 0 }
@@ -221,6 +225,10 @@ main h2 {
   box-shadow: var(--shadow);
 }
 
+@media (max-width: 600px) {
+  .carousel {width: 550px; } /* engere Abstände auf sehr schmalen Geräten */
+}
+
 /* Nutzer wünscht reduzierte Bewegung → keine Transition */
 @media (prefers-reduced-motion: reduce) {
   .carousel-track { transition: none }
@@ -252,6 +260,9 @@ main h2 {
 .side-content a:hover,
 .side-content a:focus { text-decoration: underline }
 
+@media (max-width: 600px) {
+  .side-figure {width: 500px; } /* engere Abstände auf sehr schmalen Geräten */
+}
 /* ===== Footer ===== */
 .site-footer {
   border-top: 1px solid var(--border);

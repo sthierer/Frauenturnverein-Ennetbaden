@@ -116,14 +116,6 @@
             <div id="messageError" class="error-msg" aria-live="polite"></div>
           </div>
 
-          <div class="form-field">
-            <label class="checkbox">
-              <input id="consent" name="Consent" type="checkbox" required aria-describedby="consentError">
-              Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden.
-            </label>
-            <div id="consentError" class="error-msg" aria-live="polite"></div>
-          </div>
-
           <!-- Zusammenfassung von Fehlern (wird dynamisch befüllt) -->
           <div id="formErrors" class="form-errors" role="alert" aria-live="assertive"></div>
 
@@ -184,7 +176,7 @@
       const v = trim(value);
       if (!v) return { valid: false, msg: "Bitte geben Sie Ihren Namen ein." };
       if (v.length < 3) return { valid: false, msg: "Der Name muss mindestens 3 Zeichen enthalten." };
-      const pattern = /^[A-Za-zÀ-ÖØ-öø-ÿÄÖÜäöüß' -]{3,}$/;
+      const pattern = /^[A-Za-zÀ-ÖØ-öø-ÿÄÖÜäöü' -]{3,}$/;
       if (!pattern.test(v)) return { valid: false, msg: "Bitte nur Buchstaben, Leerzeichen, Bindestriche und Apostrophe verwenden." };
       return { valid: true };
     }
